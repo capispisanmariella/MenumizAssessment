@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRHR Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/datatable.css">
+    <link rel="stylesheet" href="path/to/sumoselect.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="HRHR Logo">
+                <span>HRHR</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="far fa-calendar"></i> Calendar</a></li>
+                    <li><a href="#"><i class="fas fa-user-friends"></i> Recruitment</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Employees</a></li>
+                    <li class="active"><a href="#"><i class="far fa-clock"></i> Leave</a></li>
+                    <li><a href="#"><i class="fas fa-sitemap"></i> Organisation</a></li>
+                    <li><a href="#"><i class="fas fa-file-invoice-dollar"></i> Billings</a></li>
+                    <li><a href="#"><i class="far fa-comments"></i> Engagement</a></li>
+                    <li><a href="#"><i class="fas fa-laptop-code"></i> Development</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> Performance</a></li>
+                    <li><a href="#"><i class="far fa-file-alt"></i> Reports</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <div class="company-select">
+                        <img src="assets/img/menumiz-icon.png" alt="Menumiz Icon" class="menumiz-icon">
+                        <span>Menumiz HR</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Enter any keyword...">
+                    </div>
+                    <button class="btn-icon"><i class="fa-solid fa-sliders"></i></button>
+                    <button class="btn-icon"><i class="far fa-bell"></i></button>
+                    <div class="user-profile">
+                        <img src="assets/img/user-avatar.jpg" alt="User Avatar">
+                    </div>
+                </div>
+            </header>
+            <section class="leave-management">
+                <nav class="sub-nav">
+                    <ul>
+                        <li><a href="#" class="active">Leave Management</a></li>
+                        <li><a href="#">Leave Requests</a></li>
+                        <li><a href="#">Leave Types</a></li>
+                        <li><a href="#">Leave Calendar</a></li>
+                        <li><a href="#">Leave Report</a></li>
+                        <li><a href="#">Leave Approver</a></li>
+                        <li><i class="fa-solid fa-sliders slider-icon"></i></li>
+                    </ul>
+                </nav>
+                <section class="dashboard">
+                    <h1>Dashboard</h1>
+                    <div class="dashboard-content">
+                        <div class="heatmap">
+                            <div class="heatmap-header">
+                                <h2>Heatmap</h2>
+                                <div class="heatmap-controls">
+                                    <select id="sickdaySelect">
+                                        <option>SICKDAY</option>
+                                    </select>
+                                    <select id="monthSelect">
+                                        <option>MARCH 2023</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="weekdays">
+                                <div class="weekday">Mon</div>
+                                <div class="weekday">Tue</div>
+                                <div class="weekday">Wed</div>
+                                <div class="weekday">Thu</div>
+                                <div class="weekday active">Fri</div>
+                                <div class="weekday">Sat</div>
+                                <div class="weekday">Sun</div>
+                            </div>
+                            <div class="leave-types">
+                                <div class="leave-type">
+                                    <span>Sick Leave</span>
+                                    <div class="progress-circle" data-progress="50">
+                                        <span>50%</span>
+                                    </div>
+                                </div>
+                                <div class="leave-type">
+                                    <span>Annual Leave</span>
+                                    <div class="progress-circle" data-progress="30">
+                                        <span>30%</span>
+                                    </div>
+                                </div>
+                                <div class="leave-type">
+                                    <span>Emergency Leave</span>
+                                    <div class="progress-circle" data-progress="20">
+                                        <span>20%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="most-popular-day">Most popular day: Friday</p>
+                        </div>
+                        <div class="most-days-away">
+                            <div class="most-days-away-header">
+                                <h2>Most Days Away</h2>
+                                <select id="mostDaysAwaySelect">
+                                    <option>MARCH 2023</option>
+                                </select>
+                            </div>
+                            <ul class="employee-list">
+                                <li>
+                                    <img src="assets/img/avatar.jpg" alt="Mark Jacobs">
+                                    <span class="employee-name">Mark Jacobs</span>
+                                    <span class="days-away">5.0 day(s)</span>
+                                </li>
+                                <li>
+                                    <img src="assets/img/user-avatar.jpg" alt="Charlie Kristen">
+                                    <span class="employee-name">Charlie Kristen</span>
+                                    <span class="days-away">3.5 day(s)</span>
+                                </li>
+                                <li>
+                                    <img src="assets/img/user-avatar.jpg" alt="Nur Fariha binti Maslan">
+                                    <span class="employee-name">Nur Fariha binti Maslan</span>
+                                    <span class="days-away">1.0 day(s)</span>
+                                </li>
+                                <li>
+                                    <img src="assets/img/avatar.jpg" alt="Nishant Talwar">
+                                    <span class="employee-name">Nishant Talwar</span>
+                                    <span class="days-away">1.0 day(s)</span>
+                                </li>
+                            </ul>
+                            <p class="total-days-away">TOTAL: 9.5 day(s)</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="leave-requests">
+                    <div class="section-header">
+                        <h1>Leave Requests</h1>
+                        <div class="view-toggle">
+                            <button class="active list-view">List View</button>
+                            <button class="month-view">Month View</button>
+                        </div>
+                    </div>
+                    <div class="filter-bar">
+                        <div class="status-filter">
+                            <button class="active">All</button>
+                            <button>Approved</button>
+                            <button>Rejected</button>
+                        </div>
+                        <div class="date-picker">
+                            <button class="prev-month"><i class="fas fa-chevron-left"></i></button>
+                            <div class="current-date">
+                                <span>March 2023</span>
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <button class="next-month"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table id="leaveTable" class="display" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="selectAll"></th>
+                                    <th>#</th>
+                                    <th>NAME</th>
+                                    <th>PERIOD</th>
+                                    <th>DAY(S)</th>
+                                    <th>LEAVE TYPE</th>
+                                    <th>ACTIONS</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox"><span class="status-dot orange"></span></td>
+                                    <td><span class="status-dot orange"></span></td>
+                                    <td>
+                                        <img src="assets/img/avatar.jpg" alt="" class="avatar">
+                                        <span>Mark Jacobs</span>
+                                    </td>
+                                    <td>
+                                        31 Mar. 2023 09:00 AM<br>
+                                        31 Mar. 2023 18:00 PM
+                                    </td>
+                                    <td>1.0</td>
+                                    <td>Annual Leave</td>
+                                    <td>
+                                        <button class="btn-reject">REJECT</button>
+                                        <button class="btn-approve">APPROVE</button>
+                                    </td>
+                                    <td><button class="btn-more">></button></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"><span class="status-dot orange"></span></td>
+                                    <td><span class="status-dot orange"></span></td>
+                                    <td>
+                                        <img src="assets/img/user-avatar.jpg" alt="" class="avatar">
+                                        <span>Charlie Kristen</span>
+                                    </td>
+                                    <td>
+                                        31 Mar. 2023 09:00 AM<br>
+                                        31 Mar. 2023 18:00 PM
+                                    </td>
+                                    <td>2.0</td>
+                                    <td>Annual Leave</td>
+                                    <td>
+                                        <button class="btn-reject">REJECT</button>
+                                        <button class="btn-approve">APPROVE</button>
+                                    </td>
+                                    <td><button class="btn-more">></button></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"><span class="status-dot orange"></span></td>
+                                    <td><span class="status-dot orange"></span></td>
+                                    <td>
+                                        <img src="assets/img/user-avatar.jpg" alt="" class="avatar">
+                                        <span>Nur Fariha binti Maslan</span>
+                                    </td>
+                                    <td>
+                                        31 Mar. 2023 09:00 AM<br>
+                                        31 Mar. 2023 18:00 PM
+                                    </td>
+                                    <td>2.0</td>
+                                    <td>Hospital Leave</td>
+                                    <td>
+                                        <button class="btn-reject">REJECT</button>
+                                        <button class="btn-approve">APPROVE</button>
+                                    </td>
+                                    <td><button class="btn-more">></button></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"><span class="status-dot orange"></span></td>
+                                    <td><span class="status-dot orange"></span></td>
+                                    <td>
+                                        <img src="assets/img/avatar.jpg" alt="" class="avatar">
+                                        <span>Nishant Talwar</span>
+                                    </td>
+                                    <td>
+                                        31 Mar. 2023 09:00 AM<br>
+                                        31 Mar. 2023 18:00 PM
+                                    </td>
+                                    <td>1.5</td>
+                                    <td>Sick Leave</td>
+                                    <td>
+                                        <button class="btn-reject">REJECT</button>
+                                        <button class="btn-approve">APPROVE</button>
+                                    </td>
+                                    <td><button class="btn-more">></button></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"><span class="status-dot orange"></span></td>
+                                    <td><span class="status-dot orange"></span></td>
+                                    <td>
+                                        <img src="assets/img/avatar.jpg" alt="" class="avatar">
+                                        <span>Simon Minter</span>
+                                    </td>
+                                    <td>
+                                        31 Mar. 2023 09:00 AM<br>
+                                        31 Mar. 2023 18:00 PM
+                                    </td>
+                                    <td>3.0</td>
+                                    <td>Sick Leave</td>
+                                    <td>
+                                        <button class="btn-reject">REJECT</button>
+                                        <button class="btn-approve">APPROVE</button>
+                                    </td>
+                                    <td><button class="btn-more">></button></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"><span class="status-dot orange"></span></td>
+                                    <td><span class="status-dot orange"></span></td>
+                                    <td>
+                                        <img src="assets/img/avatar.jpg" alt="" class="avatar">
+                                        <span>Mark Jacobs</span>
+                                    </td>
+                                    <td>
+                                        31 Mar. 2023 09:00 AM<br>
+                                        31 Mar. 2023 18:00 PM
+                                    </td>
+                                    <td>2.5</td>
+                                    <td>Annual Leave</td>
+                                    <td>
+                                        <button class="btn-reject">REJECT</button>
+                                        <button class="btn-approve">APPROVE</button>
+                                    </td>
+                                    <td><button class="btn-more">></button></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="8">
+                                        <div class="table-footer">
+                                            <button class="btn-prev">PREVIOUS</button>
+                                            <span></span>
+                                            <button class="btn-next">NEXT</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="action-footer hidden">
+            <div class="footer-content">
+                <span class="total-selected"></span>
+                <div class="action-buttons">
+                    <button class="btn-reject">REJECT</button>
+                    <button class="btn-approve-all">APPROVE</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="approvalModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirmation</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="single hidden">
+                    <p>Are you sure want to approve <span id="employeeName"></span> <span id="leaveType"></span> for <span id="leaveDuration"></span> day/s?</p>
+                </div>
+                <div class="multiple hidden">
+                    <p>Are you sure want to approve all selected leave requests?</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="modalNo" class="btn-no">NO</button>
+                <button id="modalYes" class="btn-yes">YES</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/datatables.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="path/to/jquery.sumoselect.min.js"></script>
+</body>
+</html>
