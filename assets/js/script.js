@@ -17,6 +17,7 @@ $(document).ready(function() {
         lengthChange: false,
         searching: false,
         pagingType: 'simple',
+        responsive: true,
         language: {
             paginate: {
                 previous: '',
@@ -77,7 +78,6 @@ $(document).ready(function() {
         }
     }
 
-    // Custom pagination
     $('.btn-prev').on('click', function() {
         table.page('previous').draw('page');
     });
@@ -86,7 +86,6 @@ $(document).ready(function() {
         table.page('next').draw('page');
     });
 
-    // Update pagination info
     function updatePaginationInfo() {
         var info = table.page.info();
         $('.table-footer span').text((info.start + 1) + '-' + info.end + ' OF ' + info.recordsTotal);
@@ -95,7 +94,6 @@ $(document).ready(function() {
     table.on('draw', updatePaginationInfo);
     updatePaginationInfo();
 
-    // Add event listeners for other interactive elements
     $('.view-toggle button').on('click', function() {
         $('.view-toggle button').removeClass('active');
         $(this).addClass('active');
@@ -107,14 +105,11 @@ $(document).ready(function() {
     });
 
     $('.prev-month, .next-month').on('click', function() {
-        // Implement month navigation logic here
     });
 
-    // Modal functionality
     var modal = document.getElementById("approvalModal");
     var span = document.getElementsByClassName("close")[0];
 
-    // Function to open modal
     function openModal(name, leaveType, duration) {
         $('#employeeName').text(name);
         $('#leaveType').text(leaveType.toLowerCase());
@@ -122,19 +117,16 @@ $(document).ready(function() {
         modal.style.display = "block";
     }
 
-    // Close modal when clicking on <span> (x)
     span.onclick = function() {
         modal.style.display = "none";
     }
 
-    // Close modal when clicking outside of it
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
 
-    // Handle approve button click
     $('.btn-approve').on('click', function() {
         var row = $(this).closest('tr');
         var name = row.find('td:nth-child(2)').text().trim();
@@ -145,21 +137,17 @@ $(document).ready(function() {
         $(".multiple").hide();
     });
 
-    // Handle approve button click
     $('.btn-approve-all').on('click', function() {
         openModal("","","");
         $(".single").hide();
         $(".multiple").show();
     });
 
-    // Handle modal No button
     $('#modalNo').on('click', function() {
         modal.style.display = "none";
     });
 
-    // Handle modal Yes button
     $('#modalYes').on('click', function() {
-        // Implement approval logic here
         console.log("Approved!");
         modal.style.display = "none";
     });
@@ -169,15 +157,18 @@ $(document).ready(function() {
         $(this).css('--progress', progress * 3.6 + 'deg');
     });
 
-    // Initialize select dropdowns
     $('#sickdaySelect, #monthSelect, #mostDaysAwaySelect').each(function() {
         $(this).SumoSelect();
     });
 
-    // Weekday tab functionality
     $('.weekday').click(function() {
         $('.weekday').removeClass('active');
         $(this).addClass('active');
+    });
+
+    $('.menu-toggle').on('click', function() {
+        $('.sidebar').toggleClass('active');
+        $('.main-content').toggleClass('sidebar-active');
     });
 
 });

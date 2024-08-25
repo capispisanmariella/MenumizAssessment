@@ -619,6 +619,69 @@ body {
             padding: 8px;
         }
     }
+
+    .dashboard-content {
+        flex-direction: column;
+    }
+    
+    .heatmap, .most-days-away {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    
+    .header-left, .header-right {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    
+    .search-bar {
+        width: 100%;
+        margin-bottom: 10px;
+        
+        input {
+            width: 100%;
+        }
+    }
+    
+    .leave-requests .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        
+        .view-toggle {
+            margin-top: 10px;
+        }
+    }
+    
+    #leaveTable {
+        font-size: 12px;
+        
+        .btn-reject, .btn-approve {
+            padding: 5px 10px;
+            font-size: 10px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 60px;
+        
+        .logo span, nav ul li a span {
+            display: none;
+        }
+    }
+    
+    .main-content {
+        margin-left: 60px;
+    }
 }
 
 .modal {
